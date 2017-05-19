@@ -1,0 +1,37 @@
+<div>
+  <div>
+    <a [routerLink]="['/generator-index']">Go back to Index</a> 
+  </div>
+  <h1>
+    Fal OSB Services Generation
+  </h1>
+  <h5>
+    This configuration provides artifact generation for Fal ATC standards
+  </h5>
+  <h3>Select a generation form</h3>
+  <table>
+    <tr>
+      <td>
+        <input id="generateExpCompFormID" name="selectedGeneratorForm" type="radio" value="generateExpCompForm" [routerLink]="['generate-exp-comp-form']" />
+        <label for="generateExpCompFormID">
+          OSB Generate EXP / COMP
+        </label>
+      </td>
+      <td>
+        <input id="generateImplPrdFormID" name="selectedGeneratorForm" type="radio" value="generateImplPrdForm" [routerLink]="['generate-impl-prd-form']" />
+        <label for="generateImplPrdFormID">
+          OSB Generate IMPL / Producer
+        </label>
+      </td>
+      <td>
+        <input id="GenReqFileFormID" name="selectedGeneratorForm" type="radio" value="GenReqFileForm" [routerLink]="['gen-req-file-form']" />
+        <label for="GenReqFileFormID">
+          Generate using file
+        </label>
+      </td>
+    </tr>
+  </table>
+  <div style="padding: 1rem;">
+    <router-outlet></router-outlet>
+  </div>
+</div>

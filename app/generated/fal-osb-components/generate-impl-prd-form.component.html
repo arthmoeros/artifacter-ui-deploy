@@ -1,0 +1,224 @@
+<div>
+  <form #generationForm="ngForm" (ngSubmit)="generateImplPrd()">
+    <table>
+      <tr>
+        <td colspan="3">
+          <h4>Componentes a generar</h4>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Generar capa IMPL
+        </td>
+        <td>
+          <input type="checkbox" [(ngModel)]="map.isImpl" id="isImpl" name="map.isImpl" [disabled]="true" />
+        </td>
+        <td>
+          <div class="helptext"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Generar capa Producer
+        </td>
+        <td>
+          <input type="checkbox" [(ngModel)]="map.isPrd" id="isPrd" name="map.isPrd" [disabled]="false" />
+        </td>
+        <td>
+          <div class="helptext"></div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <h4>Interfaz Técnica Backend</h4>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Capa
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="map.capa" id="capa" name="map.capa" placeholder="" [readonly]="true" required />
+        </td>
+        <td>
+          <div class="helptext">("OSB" fijo)</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Negocio
+        </td>
+        <td>
+          <select [(ngModel)]="map.negocio" id="negocio" name="map.negocio" [disabled]="false" required>
+            <option value="TPD">
+              TPD
+            </option>
+            <option value="SOD">
+              SOD
+            </option>
+            <option value="TOT">
+              TOT
+            </option>
+            <option value="CMR">
+              CMR
+            </option>
+            <option value="BCO">
+              BCO
+            </option>
+            <option value="SEG">
+              SEG
+            </option>
+            <option value="VIA">
+              VIA
+            </option>
+            <option value="MOV">
+              MOV
+            </option>
+            <option value="CORP">
+              CORP
+            </option>
+            <option value="FIF">
+              FIF
+            </option>
+            <option value="LOG">
+              LOG
+            </option>
+            <option value="ECOM">
+              ECOM
+            </option>
+          </select>
+        </td>
+        <td>
+          <div class="helptext"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Localización
+        </td>
+        <td>
+          <select [(ngModel)]="map.localizacion" id="localizacion" name="map.localizacion" [disabled]="false" required>
+            <option value="AR">
+              AR
+            </option>
+            <option value="BR">
+              BR
+            </option>
+            <option value="CL">
+              CL
+            </option>
+            <option value="CO">
+              CO
+            </option>
+            <option value="PE">
+              PE
+            </option>
+            <option value="UY">
+              UY
+            </option>
+            <option value="CORP">
+              CORP
+            </option>
+          </select>
+        </td>
+        <td>
+          <div class="helptext"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Sistema Backend
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="map.backend" id="backend" name="map.backend" placeholder="" [readonly]="false" required />
+        </td>
+        <td>
+          <div class="helptext"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Objeto de Datos
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="map.objetoDeDatos" id="objetoDeDatos" name="map.objetoDeDatos" placeholder="" [readonly]="false" />
+        </td>
+        <td>
+          <div class="helptext">Espacio para CamelCase (Ej: 'pago electronico')</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Nombre Interfaz / Package Backend
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="map.interfazPackage" id="interfazPackage" name="map.interfazPackage" placeholder="" [readonly]="false" />
+        </td>
+        <td>
+          <div class="helptext"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Operación / Comando Interfaz Backend
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="map.operacionComando" id="operacionComando" name="map.operacionComando" placeholder="" [readonly]="false" required />
+        </td>
+        <td>
+          <div class="helptext"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Versión Servicio
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="map.versionServicio" id="versionServicio" name="map.versionServicio" placeholder="" [readonly]="false" required />
+        </td>
+        <td>
+          <div class="helptext">(formato vX.Y)</div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <h4>Versiones técnicas</h4>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Versión WSDL
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="map.versionWSDL" id="versionWSDL" name="map.versionWSDL" placeholder="" [readonly]="false" required />
+        </td>
+        <td>
+          <div class="helptext">(formato vX.Y)</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Versión XSD Req
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="map.versionXSDReq" id="versionXSDReq" name="map.versionXSDReq" placeholder="" [readonly]="false" required />
+        </td>
+        <td>
+          <div class="helptext">(formato vAAAA.MM)</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Versión XSD Resp
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="map.versionXSDResp" id="versionXSDResp" name="map.versionXSDResp" placeholder="" [readonly]="false" required />
+        </td>
+        <td>
+          <div class="helptext">(formato vAAAA.MM)</div>
+        </td>
+      </tr>
+    </table>
+    <button type="submit" [disabled]="!generationForm.form.valid">Generate</button>
+  </form>
+</div>

@@ -1,0 +1,31 @@
+<div>
+  <div>
+    <a [routerLink]="['/generator-index']">Go back to Index</a> 
+  </div>
+  <h1>
+    OSB Services Generation Sample
+  </h1>
+  <h5>
+    This sample configuration helps as a basis for understanding Artifacter's XML parsing to Angular Templates
+  </h5>
+  <h3>Select a generation form</h3>
+  <table>
+    <tr>
+      <td>
+        <input id="sampleFormOneID" name="selectedGeneratorForm" type="radio" value="sampleFormOne" [routerLink]="['sample-form-one']" />
+        <label for="sampleFormOneID">
+          Sample Form 1
+        </label>
+      </td>
+      <td>
+        <input id="GenReqFileFormID" name="selectedGeneratorForm" type="radio" value="GenReqFileForm" [routerLink]="['gen-req-file-form']" />
+        <label for="GenReqFileFormID">
+          Generate using file
+        </label>
+      </td>
+    </tr>
+  </table>
+  <div style="padding: 1rem;">
+    <router-outlet></router-outlet>
+  </div>
+</div>

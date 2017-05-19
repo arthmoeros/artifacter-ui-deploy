@@ -1,0 +1,101 @@
+<div>
+  <form #generationForm="ngForm" (ngSubmit)="generateSampleArchOSB1()">
+    <table>
+      <tr>
+        <td colspan="3">
+          <h4>General Information</h4>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Additional Folders
+        </td>
+        <td>
+          <input type="checkbox" [(ngModel)]="map.additionalFolders" id="additionalFolders" name="map.additionalFolders" [disabled]="false" />
+        </td>
+        <td>
+          <div class="helptext">Indicates whether or not to generate additional empty folders</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Business Domain
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="map.bizDomain" id="bizDomain" name="map.bizDomain" placeholder="" [readonly]="false" required />
+        </td>
+        <td>
+          <div class="helptext">Service's business domain, default is "General"</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Business Entity
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="map.bizEntity" id="bizEntity" name="map.bizEntity" placeholder="Put a Biz here" [readonly]="false" required />
+        </td>
+        <td>
+          <div class="helptext">Business Entity which the service makes use of</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Service ID
+        </td>
+        <td>
+          <input type="number" [(ngModel)]="map.serviceId" id="serviceId" name="map.serviceId" placeholder="" [readonly]="false" required />
+        </td>
+        <td>
+          <div class="helptext">Identification number for the service</div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <h4>Specific Information</h4>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Service Name
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="map.serviceName" id="serviceName" name="map.serviceName" placeholder="" [readonly]="false" required />
+        </td>
+        <td>
+          <div class="helptext">Service descriptive name, should indicate a verbal operation (IE: GetCustomerInfo)</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Service Version
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="map.serviceVersion" id="serviceVersion" name="map.serviceVersion" placeholder="" [readonly]="false" required />
+        </td>
+        <td>
+          <div class="helptext">Version number for the service, should follow the pattern: V[Major].[Minor] (IE: V1.0)</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Service Type
+        </td>
+        <td>
+          <select [(ngModel)]="map.serviceType" id="serviceType" name="map.serviceType" [disabled]="false">
+            <option value="ABC">
+              ABC
+            </option>
+            <option value="XYZ">
+              XYZ
+            </option>
+          </select>
+        </td>
+        <td>
+          <div class="helptext">Indicates Service Type</div>
+        </td>
+      </tr>
+    </table>
+    <button type="submit" [disabled]="!generationForm.form.valid">Generate</button>
+  </form>
+</div>

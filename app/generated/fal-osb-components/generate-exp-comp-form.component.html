@@ -1,0 +1,278 @@
+<div>
+  <form #generationForm="ngForm" (ngSubmit)="generateExpComp()">
+    <table>
+      <tr>
+        <td colspan="3">
+          <h4>Componentes a generar</h4>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Generar capa EXP
+        </td>
+        <td>
+          <input type="checkbox" [(ngModel)]="map.isExp" id="isExp" name="map.isExp" [disabled]="true" />
+        </td>
+        <td>
+          <div class="helptext"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Generar capa COMP
+        </td>
+        <td>
+          <input type="checkbox" [(ngModel)]="map.isComp" id="isComp" name="map.isComp" [disabled]="false" />
+        </td>
+        <td>
+          <div class="helptext"></div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <h4>Servicio / Funcionalidad de Negocio</h4>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Objeto de Negocio
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="map.objetoDeNegocio" id="objetoDeNegocio" name="map.objetoDeNegocio" placeholder="" [readonly]="false" required />
+        </td>
+        <td>
+          <div class="helptext">Espacio para CamelCase (Ej: 'pago electronico')</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Entidad Discreta O.N.
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="map.entidadDiscreta" id="entidadDiscreta" name="map.entidadDiscreta" placeholder="" [readonly]="false" />
+        </td>
+        <td>
+          <div class="helptext">Espacio para CamelCase (Ej: 'solicitud emision')</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Operación
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="map.operacion" id="operacion" name="map.operacion" placeholder="" [readonly]="false" required />
+        </td>
+        <td>
+          <div class="helptext">(Verbo infinitivo)</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Versión Servicio
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="map.versionServicio" id="versionServicio" name="map.versionServicio" placeholder="" [readonly]="false" required />
+        </td>
+        <td>
+          <div class="helptext">(formato vX.Y)</div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <h4>Distribución</h4>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Negocio
+        </td>
+        <td>
+          <select [(ngModel)]="map.negocio" id="negocio" name="map.negocio" [disabled]="false" required>
+            <option value="TPD">
+              TPD
+            </option>
+            <option value="SOD">
+              SOD
+            </option>
+            <option value="TOT">
+              TOT
+            </option>
+            <option value="CMR">
+              CMR
+            </option>
+            <option value="BCO">
+              BCO
+            </option>
+            <option value="SEG">
+              SEG
+            </option>
+            <option value="VIA">
+              VIA
+            </option>
+            <option value="MOV">
+              MOV
+            </option>
+            <option value="CORP">
+              CORP
+            </option>
+            <option value="FIF">
+              FIF
+            </option>
+            <option value="LOG">
+              LOG
+            </option>
+            <option value="ECOM">
+              ECOM
+            </option>
+          </select>
+        </td>
+        <td>
+          <div class="helptext"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Localización
+        </td>
+        <td>
+          <select [(ngModel)]="map.localizacion" id="localizacion" name="map.localizacion" [disabled]="false" required>
+            <option value="AR">
+              AR
+            </option>
+            <option value="BR">
+              BR
+            </option>
+            <option value="CL">
+              CL
+            </option>
+            <option value="CO">
+              CO
+            </option>
+            <option value="PE">
+              PE
+            </option>
+            <option value="UY">
+              UY
+            </option>
+            <option value="CORP">
+              CORP
+            </option>
+          </select>
+        </td>
+        <td>
+          <div class="helptext"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Capa
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="map.capa" id="capa" name="map.capa" placeholder="" [readonly]="true" required />
+        </td>
+        <td>
+          <div class="helptext">("OSB" fijo)</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Dominio
+        </td>
+        <td>
+          <select [(ngModel)]="map.dominio" id="dominio" name="map.dominio" [disabled]="false" required>
+            <option value="TPD">
+              TPD
+            </option>
+            <option value="SOD">
+              SOD
+            </option>
+            <option value="TOT">
+              TOT
+            </option>
+            <option value="LOG">
+              LOG
+            </option>
+            <option value="OMS">
+              OMS
+            </option>
+            <option value="MOB">
+              MOB
+            </option>
+            <option value="ECOM">
+              ECOM
+            </option>
+            <option value="CORP">
+              CORP
+            </option>
+            <option value="CMRCL">
+              CMRCL
+            </option>
+            <option value="CMRAR">
+              CMRAR
+            </option>
+            <option value="BCOCL">
+              BCOCL
+            </option>
+            <option value="BCOPE">
+              BCOPE
+            </option>
+            <option value="BCOCO">
+              BCOCO
+            </option>
+            <option value="SEG">
+              SEG
+            </option>
+            <option value="MOV">
+              MOV
+            </option>
+            <option value="VIA">
+              VIA
+            </option>
+          </select>
+        </td>
+        <td>
+          <div class="helptext"></div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <h4>Versiones técnicas</h4>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Versión WSDL
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="map.versionWSDL" id="versionWSDL" name="map.versionWSDL" placeholder="" [readonly]="false" required />
+        </td>
+        <td>
+          <div class="helptext">(formato vX.Y)</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Versión XSD Req
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="map.versionXSDReq" id="versionXSDReq" name="map.versionXSDReq" placeholder="" [readonly]="false" required />
+        </td>
+        <td>
+          <div class="helptext">(formato vAAAA.MM)</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Versión XSD Resp
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="map.versionXSDResp" id="versionXSDResp" name="map.versionXSDResp" placeholder="" [readonly]="false" required />
+        </td>
+        <td>
+          <div class="helptext">(formato vAAAA.MM)</div>
+        </td>
+      </tr>
+    </table>
+    <button type="submit" [disabled]="!generationForm.form.valid">Generate</button>
+  </form>
+</div>
